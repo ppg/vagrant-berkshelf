@@ -3,8 +3,8 @@ module Berkshelf
     class Plugin < ::Vagrant.plugin("2")
       class << self
         def provision(hook)
-          hook.after(::Vagrant::Action::Builtin::Provision, Berkshelf::Vagrant::Action.upload)
-          hook.after(::Vagrant::Action::Builtin::Provision, Berkshelf::Vagrant::Action.install)
+          hook.before(::Vagrant::Action::Builtin::Provision, Berkshelf::Vagrant::Action.upload)
+          hook.before(::Vagrant::Action::Builtin::Provision, Berkshelf::Vagrant::Action.install)
 
           # vagrant-aws < 0.4.0 uses a non-standard provision action
           if defined?(VagrantPlugins::AWS::Action::TimedProvision)
