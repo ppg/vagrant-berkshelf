@@ -1,3 +1,9 @@
+# 2.0.2
+
+* Bug Fixes
+  * Pull 3.x branch bugfix for vendoring shell before provisioning:
+    https://github.com/berkshelf/vagrant-berkshelf/pull/217
+
 # 2.0.1
 
 * Bug Fixes
